@@ -1,0 +1,1 @@
+pkill -x conky;sleep 1&&LANG=he_IL.UTF-8 conky -c ./conky.conf&
