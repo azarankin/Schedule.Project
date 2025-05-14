@@ -73,7 +73,6 @@ To run on boot:
 4. Command: `/path/to/startup_conky.sh`
 5. Save and reboot
 
-![Startup Applications GUI](https://via.placeholder.com/600x200.png?text=Startup+Applications+Screenshot)
 
 ---
 

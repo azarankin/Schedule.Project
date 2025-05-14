@@ -69,7 +69,6 @@ time,task
 4. פקודה: `/path/to/startup_conky.sh`
 5. שמור והפעל מחדש
 
-![ממשק הפעלה באתחול](https://via.placeholder.com/600x200.png?text=Startup+Applications+GUI)
 
 ---
 
