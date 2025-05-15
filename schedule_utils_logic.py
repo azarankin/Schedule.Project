@@ -45,16 +45,29 @@ def load_and_filter_schedule(now):
     return schedule, full_schedule[start:end]
 
 def find_current_task_index(tasks_to_display, now):
-    closest_now = None
-    min_now_diff = float('inf')
+    # search by diff +-30 min from current time
+    for tolerance in [1800, 3600, 7200, 10800, 18000]:  # 30min, 1h, 2h, 3h, 4h, 5h
+        closest = None
+        min_diff = float('inf')
+        for i, (task_time, _) in enumerate(tasks_to_display):
+            delta = (task_time - now).total_seconds()
+            if -tolerance <= delta <= tolerance and abs(delta) < min_diff:
+                closest = i
+                min_diff = abs(delta)
+        if closest is not None:
+            return closest
+
+    # continue search for closest
     closest_past = None
     min_past_diff = float('inf')
     for i, (task_time, _) in enumerate(tasks_to_display):
-        diff = abs((task_time - now).total_seconds())
-        if (task_time >= now) and diff <= 1800 and diff < min_now_diff:
-            closest_now = i
-            min_now_diff = diff
-        if task_time < now and diff < min_past_diff:
+        delta = (task_time - now).total_seconds()
+        if delta < 0 and abs(delta) < min_past_diff:
             closest_past = i
-            min_past_diff = diff
-    return closest_now if closest_now is not None else closest_past
+            min_past_diff = abs(delta)
+
+    # return the closest from both directions
+    if closest_past is not None:
+        return closest_past
+
+    return min(range(len(tasks_to_display)), key=lambda i: abs((tasks_to_display[i][0] - now).total_seconds()))
