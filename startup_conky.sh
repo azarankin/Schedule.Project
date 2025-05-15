@@ -11,5 +11,5 @@ if [[ ! -f "$CONFIG_FILE" ]]; then
 fi
 sed -i "s|python3 .*schedule_widget\.py|python3 $WIDGET_PATH|" "$CONFIG_FILE"
 pkill -x conky
-sleep 1
+sleep 4
 conky -c "$DIR/conky.conf" &

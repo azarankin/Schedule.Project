@@ -11,6 +11,7 @@ This project displays a real-time, right-to-left (RTL) compatible task list on y
 ```
 .
 ├── conky.conf                # Conky configuration file
+├── run.sh                   # Script to run Conky with correct environment
 ├── startup_conky.sh         # Script to autostart Conky on Ubuntu boot
 ├── schedule.csv             # Your daily task list in CSV format
 ├── schedule_widget.py       # Main entry point
@@ -41,7 +42,7 @@ pkill -x conky; sleep 1 && LANG=he_IL.UTF-8 conky -c ./conky.conf &
 
 Or via the script:
 ```bash
-./startup_conky.sh
+./run.sh
 ```
 
 ---
