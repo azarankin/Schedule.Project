@@ -1,16 +1,13 @@
 time,task
-13:00,  Task 1 | מטלה 1
 20:46,   Task 2 | מטלה 2
 21:54,  Task 3 | מטלה 3
 22:34,  Task 4 | מטלה 4
 23:00,  [!]Sleep
 07:00,  
-08:00,  [!]WakeUp
-08:00,  Gym
-10:00,  Study
-12:00,  Plan
-
-Task_List,
+09:00,  [!]WakeUp
+10:00,  [!]סדר + להתארגן
+13:00,  Deep Stream Project continue last attempt
+Task_List, 
 - Task1 משימה 1 
 - Task2 משימה 2
 

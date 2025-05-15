@@ -16,11 +16,11 @@ def get_sleep_message(now):
     return None
 
 def render_no_tasks_message(now):
-    header = CONFIG["left_padding"] * 2 + reverse_if_hebrew(CONFIG["header_title"])
-    date_line = CONFIG["left_padding"] * 3 + reverse_if_hebrew(now.strftime('%A')) + " " + now.strftime('%d.%m.%Y')
+    header = CONFIG["left_padding"] * CONFIG["header_title_padding_mul"] + reverse_if_hebrew(CONFIG["header_title"])
+    date_line = CONFIG["left_padding"] * CONFIG["date_line_padding_mul"] + reverse_if_hebrew(now.strftime('%A')) + " " + now.strftime('%d.%m.%Y')
     return f"{header}\n{date_line}\n\n" + reverse_if_hebrew(CONFIG["no_tasks_message"])
 
 def format_schedule_output(results, now):
-    header = CONFIG["left_padding"] * 2 + reverse_if_hebrew(CONFIG["header_title"])
-    date_line = CONFIG["left_padding"] * 3 + reverse_if_hebrew(now.strftime('%A')) + " " + now.strftime('%d.%m.%Y')
+    header = CONFIG["left_padding"]  * CONFIG["header_title_padding_mul"] + reverse_if_hebrew(CONFIG["header_title"])
+    date_line = CONFIG["left_padding"] * CONFIG["date_line_padding_mul"] + reverse_if_hebrew(now.strftime('%A')) + " " + now.strftime('%d.%m.%Y')
     return f"{header}\n{date_line}  {now.strftime('%H:%M')}\n\n" + "\n".join(results)
