@@ -5,7 +5,9 @@ CONFIG = {
     "SCHEDULE_FILE": "/home/arthur/schedule/schedule.csv",
     "no_tasks_message": "אין משימות בקובץ",
     "header_title": "משימות:",
+    "task_list_header_title": "משימות:",
     "left_padding": "   ",
+    "short_left_padding": "  ",
     "sleep_block": {
         "enabled": True,
         "hours": [23, 7],
